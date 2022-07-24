@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaEthereum } from 'react-icons/fa';
 import { BiInfoCircle } from 'react-icons/bi';
 import Input from './elements/input';
 import Button from './elements/button';
+import { TransactionsContext } from '../context/TransactionsContext';
 
 const Hero: React.FC<{}> = () => {
+  const { connectToWallet, currentAccount } = useContext(TransactionsContext);
+
   const commonStyles =
     'min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white hover:bg-[#2952e3] transition-all duration-200 ease-in-out cursor-pointer';
   return (
@@ -13,7 +16,7 @@ const Hero: React.FC<{}> = () => {
         <div className="md:flex-[0.5] flex-initial justify-center items-center">
           <div className="items-start">
             <h1 className="text-3xl lg:text-5xl font-bold leading-10 mb-4 text-center lg:text-left">
-              Welcome to EthKings
+              EthKings
             </h1>
             <h3 className="text-base lg:text-3xl text-center lg:text-left">
               Send Crypto Across the World
@@ -25,8 +28,11 @@ const Hero: React.FC<{}> = () => {
             cryptography to secure
           </p>
           <div className="flex items-center justify-center lg:justify-start">
-            <button className=" py-3 rounded-full bg-[#2952e3] px-7 my-4 font-bold hover:bg-[#4c6cde] transition-all duration-500 ease-in-out">
-              Connect Wallet
+            <button
+              onClick={connectToWallet}
+              className=" py-3 rounded-full bg-[#2952e3] px-7 my-4 font-bold hover:bg-[#4c6cde] transition-all duration-500 ease-in-out"
+            >
+              {currentAccount !== '' ? 'Get Started' : 'Connect To Wallet'}
             </button>
           </div>
 

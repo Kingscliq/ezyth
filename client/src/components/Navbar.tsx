@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 
 import logo from '../../images/logo.png';
+import { TransactionsContext } from '../context/TransactionsContext';
+import { truncate } from '../../utils/formatters';
 
 const NavBarItem: React.FC<{ title?: string; classProps?: string }> = ({
   title,
@@ -12,6 +14,7 @@ const NavBarItem: React.FC<{ title?: string; classProps?: string }> = ({
 const Navbar: React.FC<{}> = () => {
   const [toggleMenu, setToggleMenu] = React.useState<boolean>(false);
 
+  const { connectToWallet, currentAccount } = useContext(TransactionsContext);
   return (
     <nav className="w-full flex md:justify-center justify-between items-center p-4">
       <div className="md:flex-[0.5] flex-initial justify-center items-center">
@@ -22,8 +25,10 @@ const Navbar: React.FC<{}> = () => {
         {['Market', 'Exchange', 'Tutorials', 'Wallets'].map((item, index) => (
           <NavBarItem key={item + index} title={item} />
         ))}
-        <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
-          Connect Wallet
+        <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd] truncate">
+          {currentAccount !== ''
+            ? truncate(currentAccount, 10)
+            : 'Connect To Wallet'}
         </li>
       </ul>
       <div className="flex relative">

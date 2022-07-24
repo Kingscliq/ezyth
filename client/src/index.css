@@ -102,6 +102,10 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.Toastify__toast-theme--light {
+  font-size: 12px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
