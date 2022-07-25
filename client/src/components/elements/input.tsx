@@ -10,7 +10,7 @@ import React, {
 interface InputProps {
   type?: string;
   placeholder?: string;
-  value?: string;
+  value?: string | number | undefined;
   onClick?: () => void;
   error?: boolean;
   className?: string;
@@ -38,20 +38,6 @@ const Input: React.FC<InputProps> = ({
   message,
   props,
 }) => {
-  // const inputRef = useRef();
-
-  //   error
-  //               ? {
-  //                   backgroundColor: '#ffefed',
-  //                   border: '1px solid #e11900',
-  //                   color: 'rgba(15, 55, 90, 1)',
-  //                 }
-  //               : success
-  //               ? {
-  //                   border: '2px solid var(--secondary)',
-  //                   color: 'var(--neutral-dark)',
-  //                 }
-  //               : null
   return (
     <div>
       <div>
@@ -70,9 +56,13 @@ const Input: React.FC<InputProps> = ({
             'border-[#c4c7fc93] border-[1px] rounded bg-transparent w-full h-12 my-1',
           ].join(' ')}
           style={{
-            borderColor: error ? '#ffefed' : success ? '#2ecc71' : '0',
-            backgroundColor: error ? '#ffefed' : success ? '#e11900' : '0',
-            color: error ? 'rgba(15, 55, 90, 1)' : '0',
+            borderColor: error ? 'red' : success ? '#2ecc71' : '#c4c7fc93',
+            backgroundColor: error
+              ? '#fdcdc7'
+              : success
+              ? '#e11900'
+              : 'transparent',
+            color: error ? '#e11900' : '',
           }}
         >
           <input
