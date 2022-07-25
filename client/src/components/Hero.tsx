@@ -121,7 +121,7 @@ const Hero: React.FC<{}> = () => {
               Made Possible with the Blockchain technology
             </p>
           </div>
-          <div className="p-4 bg-[#060212b4] rounded-3xl ">
+          <div className="p-4 bg-[#060212b4] rounded-lg ">
             <form
               onSubmit={e => {
                 e.preventDefault();
