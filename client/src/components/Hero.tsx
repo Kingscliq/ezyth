@@ -6,7 +6,6 @@ import Button from './elements/button';
 import { TransactionsContext } from '../context/TransactionsContext';
 import { Formik, useFormik } from 'formik';
 import * as yup from 'yup';
-import { toast } from 'react-toastify';
 
 const Hero: React.FC<{}> = () => {
   interface TransactionValues {
