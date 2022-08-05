@@ -62,8 +62,9 @@ const Hero: React.FC<{}> = () => {
           <div className="flex items-center justify-center lg:justify-start">
             {!currentAccount && (
               <button
-                onClick={connectToWallet}
-                className=" py-3 rounded-full bg-[#2952e3] px-7 my-4 font-bold hover:bg-[#4c6cde] transition-all duration-500 ease-in-out"
+                onClick={() => connectToWallet}
+                className=" py-3 rounded-full bg-[#f8ba3c]  px-7 my-4 font-bold hover:bg-[#4c6cde] transition-all duration-500 ease-in-out"
+                // className=" py-3 rounded-full bg-[#2952e3] #E3D044 px-7 my-4 font-bold hover:bg-[#4c6cde] transition-all duration-500 ease-in-out"
               >
                 {'Connect To Wallet'}
               </button>
@@ -187,7 +188,7 @@ const Hero: React.FC<{}> = () => {
               </div>
               <div>
                 <Button
-                  className="w-full text-center border bg-[#2832df] border-[#3d47fc8c] py-4 px-6 rounded-full font-bold hover:bg-[#3d47fc] transition-all duration-500 ease-in-out"
+                  className="w-full text-center border bg-[#2b35f5] border-[#3d47fc8c] py-4 px-6 rounded-full font-bold hover:bg-[#3d47fc] transition-all duration-500 ease-in-out"
                   label="Send"
                   type="submit"
                   loading={loading}

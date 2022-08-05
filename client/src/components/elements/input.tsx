@@ -68,7 +68,7 @@ const Input: React.FC<InputProps> = ({
           <input
             type={type || 'text'}
             className={
-              'border-0 outline-none bg-transparent px-3 py-4 h-12 w-full'
+              'border-0 outline-none bg-transparent px-3 py-4 h-12 w-full focus:bg-transparent'
             }
             placeholder={placeholder || 'this is a placeholder'}
             value={value}

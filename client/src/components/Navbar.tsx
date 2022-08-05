@@ -15,6 +15,7 @@ const Navbar: React.FC<{}> = () => {
   const [toggleMenu, setToggleMenu] = React.useState<boolean>(false);
 
   const { connectToWallet, currentAccount } = useContext(TransactionsContext);
+
   return (
     <nav className="w-full flex md:justify-center justify-between items-center p-4">
       <div className="md:flex-[0.5] flex-initial justify-center items-center">
@@ -25,7 +26,10 @@ const Navbar: React.FC<{}> = () => {
         {['Market', 'Exchange', 'Tutorials', 'Wallets'].map((item, index) => (
           <NavBarItem key={item + index} title={item} />
         ))}
-        <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd] truncate">
+        <li
+          onClick={() => connectToWallet()}
+          className="bg-[#f8ba3c]  py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd] truncate transition-all duration-500 ease-linear"
+        >
           {currentAccount !== ''
             ? truncate(currentAccount, 10)
             : 'Connect To Wallet'}
