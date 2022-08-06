@@ -4,7 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 import logo from '../../images/logo.png';
 import { TransactionsContext } from '../context/TransactionsContext';
-import { truncate } from '../../utils/formatters';
+import { shorten, truncate } from '../../utils/formatters';
 
 const NavBarItem: React.FC<{ title?: string; classProps?: string }> = ({
   title,
@@ -31,7 +31,7 @@ const Navbar: React.FC<{}> = () => {
           className="bg-[#f8ba3c]  py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd] truncate transition-all duration-500 ease-linear"
         >
           {currentAccount !== ''
-            ? truncate(currentAccount, 10)
+            ? shorten(currentAccount)
             : 'Connect To Wallet'}
         </li>
       </ul>

@@ -6,6 +6,7 @@ import Button from './elements/button';
 import { TransactionsContext } from '../context/TransactionsContext';
 import { Formik, useFormik } from 'formik';
 import * as yup from 'yup';
+import { shorten } from '../../utils/formatters';
 
 const Hero: React.FC<{}> = () => {
   interface TransactionValues {
@@ -64,7 +65,6 @@ const Hero: React.FC<{}> = () => {
               <button
                 onClick={() => connectToWallet}
                 className=" py-3 rounded-full bg-[#f8ba3c]  px-7 my-4 font-bold hover:bg-[#4c6cde] transition-all duration-500 ease-in-out"
-                // className=" py-3 rounded-full bg-[#2952e3] #E3D044 px-7 my-4 font-bold hover:bg-[#4c6cde] transition-all duration-500 ease-in-out"
               >
                 {'Connect To Wallet'}
               </button>
@@ -110,7 +110,7 @@ const Hero: React.FC<{}> = () => {
               </div>
               <div>
                 <h2 className="text-3xl font-bold truncate">
-                  {currentAccount ? currentAccount : 'Ethereum'}
+                  {currentAccount ? shorten(currentAccount) : 'Ethereum'}
                 </h2>
               </div>
             </div>
