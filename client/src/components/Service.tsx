@@ -11,11 +11,12 @@ const Service: React.FC<{}> = () => {
   }> = ({ icon, title, description }) => {
     return (
       <section className="w-full p-6 border border-gray-200  mb-4 rounded-lg bg-transparent text-white flex items-center">
-        <figure className="rounded-full p-6 border-white border w-12 h-12 flex items-center justify-center self-start">
+        <figure className="rounded-full p-6 border-white border w-12 h-12 flex items-center text-xl text-[#f8ba3c] justify-center self-start">
           <div>{icon}</div>
         </figure>
+
         <aside className="ml-3">
-          <h3 className="text-xl font-bold">
+          <h3 className="text-xl font-bold  text-[#2546bd]">
             {title || 'Security Guaranteed'}
           </h3>
           <p className="text-slate-200">
