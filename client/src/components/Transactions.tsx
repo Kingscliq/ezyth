@@ -2,22 +2,26 @@ import React, { useState, useContext } from 'react';
 import { TransactionsContext } from '../context/TransactionsContext';
 import { dummy } from '../../utils/dummy';
 import { shorten } from '../../utils/formatters';
+import { useFetch } from '../hooks/useFetch';
 interface TransactionItemProp {
-  url: string;
   message: string;
   addressFrom: string;
   addressTo: string;
   timestamp: string;
   amount: string;
+  keyword: string;
 }
 const TransactionItem: React.FC<TransactionItemProp> = ({
-  url,
+  keyword,
   message,
   addressFrom,
   addressTo,
   amount,
   timestamp,
 }): JSX.Element => {
+  const { url: gifUrl, loading } = useFetch(keyword);
+
+  console.log(gifUrl);
   return (
     <section className="w-full px-4 py-3 rounded-md bg-[#3333338e] h-auto text-slate-100 text-sm">
       <div>
@@ -40,7 +44,7 @@ const TransactionItem: React.FC<TransactionItemProp> = ({
         </div>
 
         <div>
-          <img src={url} alt="images" />
+          <img src={gifUrl} alt="images" />
         </div>
 
         <div className="bg-black text-[#46e0ff]">
@@ -51,9 +55,10 @@ const TransactionItem: React.FC<TransactionItemProp> = ({
   );
 };
 const Transactions = () => {
-  const { currentAccount, connectToWallet } = useContext(TransactionsContext);
+  const { currentAccount, connectToWallet, transactions } =
+    useContext(TransactionsContext);
 
-  console.log(dummy);
+  console.log(transactions);
   return (
     <section className="w-full py-16 md:px-60 px-4">
       <div className="my-4">
@@ -80,23 +85,28 @@ const Transactions = () => {
       </div>
 
       <section className="grid lg:grid-cols-3 grid-col-1 gap-4">
-        {dummy &&
-          dummy.map(data => {
-            console.log(data);
-
-            const { amount, addressFrom, addressTo, message, timestamp, url } =
-              data;
-            return (
-              <TransactionItem
-                amount={amount}
-                addressFrom={addressFrom}
-                addressTo={addressTo}
-                timestamp={timestamp}
-                url={url}
-                message={message}
-              />
-            );
-          })}
+        {transactions.length > 0
+          ? transactions?.map((data: TransactionItemProp) => {
+              const {
+                amount,
+                addressFrom,
+                addressTo,
+                message,
+                timestamp,
+                keyword,
+              } = data;
+              return (
+                <TransactionItem
+                  amount={amount}
+                  addressFrom={addressFrom}
+                  addressTo={addressTo}
+                  timestamp={timestamp}
+                  keyword={keyword}
+                  message={message}
+                />
+              );
+            })
+          : null}
       </section>
     </section>
   );

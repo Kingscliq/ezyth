@@ -9,9 +9,9 @@ function App() {
           <Navbar />
           <Hero />
         </div>
-
         <Service />
         <Transactions />
+        <Footer />
       </div>
     </div>
   );
