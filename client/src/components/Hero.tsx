@@ -36,7 +36,6 @@ const Hero: React.FC<{}> = () => {
       initialValues: transactionValues,
       validationSchema: transactionValidationSchema,
       onSubmit: async values => {
-        console.log(values);
         makeTransaction(values);
       },
     });
