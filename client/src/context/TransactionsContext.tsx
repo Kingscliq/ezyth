@@ -46,7 +46,7 @@ export const TransactionProvider = ({ children }: any) => {
       const transactionContract = getEthereumContract();
       // Get All Transactions
       const transactions = await transactionContract.fetchAllTransactions();
-
+      console.log(transactions);
       const formattedTransactions = transactions.map((t: any) => {
         return {
           addressTo: t.reciever,

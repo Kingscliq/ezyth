@@ -6,6 +6,7 @@ import { TransactionProvider } from './context/TransactionsContext';
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css';
 
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <TransactionProvider>
     <React.StrictMode>

@@ -1,6 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap'); */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Oswald:wght@500;700&family=Rubik+Dirt&display=swap');
 
 * html {
   padding: 0;
@@ -9,7 +10,6 @@
 }
 /* #E3D044
 #f8ba3c!important  */
-
 
 body {
   margin: 0;
@@ -21,17 +21,17 @@ body {
 .gradient-bg-welcome {
   background: #5433ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(
-    to right,
-    #3f5efb,
-    #20bdff,
-    #5433ff
+    315deg,
+    rgba(9, 9, 9, 1) 66%,
+    rgba(37, 38, 42, 1) 88%
   ); /* Chrome 10-25, Safari 5.1-6 */
+  background: rgb(9, 9, 9);
   background: linear-gradient(
-    to right,
-    #3f5efb,
-    #20bdff,
-    #5433ff
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    315deg,
+    rgba(9, 9, 9, 1) 66%,
+    rgba(37, 38, 42, 1) 88%
+  );
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   /* background-color: #0f0e13; */
   /* background-color: #0f0e1384; */

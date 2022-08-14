@@ -17,24 +17,31 @@ const Navbar: React.FC<{}> = () => {
   const { connectToWallet, currentAccount } = useContext(TransactionsContext);
 
   return (
-    <nav className="w-full flex md:justify-center justify-between items-center p-4">
-      <div className="md:flex-[0.5] flex-initial justify-center items-center">
-        {/* <img src={logo} alt="logo" className="w-32 cursor-pointer" /> */}
-        <h3 className="font-bold text-white ">EthKings</h3>
+    <nav className="w-full flex justify-between p-4 items-center">
+      <div className="w-full  flex justify-between lg:px-20 p-4 items-center">
+        <div className="">
+          {/* <img src={logo} alt="logo" className="w-32 cursor-pointer" /> */}
+          <h3 className="font-bold text-white font-accent text-2xl">EthK</h3>
+        </div>
+        <div className="self-end">
+          <ul className="text-white md:flex hidden list-none flex-row justify-between items-center">
+            {['Market', 'Exchange', 'Tutorials', 'Wallets'].map(
+              (item, index) => (
+                <NavBarItem key={item + index} title={item} />
+              )
+            )}
+            <li
+              onClick={() => connectToWallet()}
+              className="bg-primary  py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd] truncate transition-all duration-500 ease-linear"
+            >
+              {currentAccount !== ''
+                ? shorten(currentAccount)
+                : 'Connect To Wallet'}
+            </li>
+          </ul>
+        </div>
       </div>
-      <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
-        {['Market', 'Exchange', 'Tutorials', 'Wallets'].map((item, index) => (
-          <NavBarItem key={item + index} title={item} />
-        ))}
-        <li
-          onClick={() => connectToWallet()}
-          className="bg-[#f8ba3c]  py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd] truncate transition-all duration-500 ease-linear"
-        >
-          {currentAccount !== ''
-            ? shorten(currentAccount)
-            : 'Connect To Wallet'}
-        </li>
-      </ul>
+
       <div className="flex relative">
         {!toggleMenu && (
           <HiMenuAlt4
@@ -63,7 +70,7 @@ const Navbar: React.FC<{}> = () => {
                 <NavBarItem
                   key={item + index}
                   title={item}
-                  classProps="my-2 text-lg"
+                  classProps="my-2 text-sm"
                 />
               )
             )}
