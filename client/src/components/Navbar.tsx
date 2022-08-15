@@ -17,7 +17,10 @@ const Navbar: React.FC<{}> = () => {
   const { connectToWallet, currentAccount } = useContext(TransactionsContext);
 
   return (
-    <nav className="w-full flex justify-between p-4 items-center">
+    <nav
+      className="w-full flex justify-between p-4 items-center"
+      data-aos="fade-up"
+    >
       <div className="w-full  flex justify-between lg:px-20 p-4 items-center">
         <div className="">
           {/* <img src={logo} alt="logo" className="w-32 cursor-pointer" /> */}

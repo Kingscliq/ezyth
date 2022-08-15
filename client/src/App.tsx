@@ -10,7 +10,7 @@ import { TransactionsContext } from './context/TransactionsContext';
 
 function App() {
   useEffect(() => {
-    AOS.init({ delay: 500, duration: 1000, easing: 'ease', once: true });
+    AOS.init({ duration: 2000 });
   }, []);
 
   const [modalOpen, setModalOpen] = useState<boolean>(false);

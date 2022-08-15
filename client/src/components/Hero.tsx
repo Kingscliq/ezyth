@@ -51,30 +51,46 @@ const Hero: React.FC<{
       <div className="grid lg:grid-cols-2 gap-20 grid-cols-1">
         <div className="justify-center items-center">
           <div>
-            <h3 className="text-3xl lg:text-[2.25rem] font-medium text-center lg:text-left lg:w-[60%] leading-[1.5]">
-              Send Crypto Across the World
-            </h3>
-          </div>
-          <p className="my-4 lg:w-96 w-full text-center lg:text-left p-y lg:p-auto text-gray-400 text-[0.875rem] leading-[2.0]">
-            Cryptocurrency, sometimes called crypto-currency or crypto, is any
-            form of currency that exists digitally or virtually and uses
-            cryptography to secure
-          </p>
-          <div className="flex items-center justify-center lg:justify-start">
-            <button
-              onClick={() => setModalOpen(true)}
-              className=" py-3 rounded-full bg-primary px-7 my-4 hover:bg-[#4c6cde] transition-all duration-500 ease-in-out flex items-center"
+            <div data-aos="fade-up" data-duration="2500">
+              <h3 className="text-3xl lg:text-[2.25rem] font-medium text-center lg:text-left lg:w-[60%] leading-[1.5]">
+                Send Crypto Across the World
+              </h3>
+            </div>
+            <p
+              className="my-4 lg:w-96 w-full text-center lg:text-left p-y lg:p-auto text-gray-400 text-[0.875rem] leading-[2.0]"
+              data-aos="fade-up"
+              data-aos-delay="500"
             >
-              Get Started{' '}
-              <span className="ml-4">
-                {' '}
-                <BsArrowRight />
-              </span>
-            </button>
+              Cryptocurrency, sometimes called crypto-currency or crypto, is any
+              form of currency that exists digitally or virtually and uses
+              cryptography to secure
+            </p>
+            <div
+              className="flex items-center justify-center lg:justify-start"
+              data-aos="fade-up"
+              data-aos-duration="2500"
+              data-aos-delay="500"
+            >
+              <button
+                onClick={() => setModalOpen(true)}
+                className=" py-3 rounded-full bg-primary px-7 my-4 hover:bg-[#4c6cde] transition-all duration-500 ease-in-out flex items-center"
+              >
+                Get Started{' '}
+                <span className="ml-4">
+                  {' '}
+                  <BsArrowRight />
+                </span>
+              </button>
+            </div>
           </div>
 
           <div className="mt-6 mb-4"></div>
-          <div className="grid lg:grid-cols-3 grid-cols-2 ">
+          <div
+            className="grid lg:grid-cols-3 grid-cols-2 "
+            data-aos="fade-left"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+          >
             <div className={`lg:rounded-tl-3xl rounded-none ${commonStyles}`}>
               Reliability
             </div>
@@ -92,7 +108,7 @@ const Hero: React.FC<{
           </div>
         </div>
 
-        <section className="p-4 lg:p-0">
+        <section className="p-4 lg:p-0" data-aos="flip-up">
           <div className="rounded-3xl w-full eth-card p-6 flex flex-col justify-between h-[300px]">
             <div className="flex items-start justify-between">
               <div className="p-6 rounded-full border-4 border-gray-100 text-gray-100 text-3xl">

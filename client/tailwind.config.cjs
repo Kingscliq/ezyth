@@ -26,7 +26,7 @@ module.exports = {
         accent: ['Rubik Dirt', 'cursive'],
       },
       backgroundImage: theme => ({
-        world: "url('/assets/images/map-world.svg')",
+        world: "url('/src/assets/images/map-world.svg')",
       }),
     },
   },

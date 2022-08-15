@@ -33,7 +33,11 @@ const Service: React.FC<{}> = () => {
     description: string;
   }> = ({ icon, title, description }) => {
     return (
-      <section className="w-auto p-2 lg:p-6 first-letter:mb-4 rounded-lg bg-transparent text-white flex flex-col items-center justify-center">
+      <section
+        className="w-auto p-2 lg:p-6 first-letter:mb-4 rounded-lg bg-transparent text-white flex flex-col items-center justify-center"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
         <figure className="rounded-full p-6 mb-6 border-gray-400 border w-12 h-12 flex items-center text-xl text-primary justify-center ">
           <div>{icon}</div>
         </figure>
@@ -54,10 +58,18 @@ const Service: React.FC<{}> = () => {
   return (
     <section className="w-full py-16 md:px-20 px-4">
       <div className="mb-16">
-        <h2 className="text-3xl lg:text-[2.25rem] text-white font-medium text-center leading-[1.5]">
+        <h2
+          className="text-3xl lg:text-[2.25rem] text-white font-medium text-center leading-[1.5]"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           We take Care of our Quality
         </h2>
-        <p className="mt-2 text-gray-400 text-[0.875rem] leading-[2.0] text-center">
+        <p
+          className="mt-2 text-gray-400 text-[0.875rem] leading-[2.0] text-center"
+          data-aos="fade-up"
+          data-aos-delay="1000"
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit
         </p>
       </div>

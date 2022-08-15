@@ -15,7 +15,12 @@ const Footer = () => {
 
   return (
     <footer>
-      <section className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:px-24 p-4">
+      <section
+        className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:px-24 p-4"
+        data-aos="fade-up"
+        data-aos-delay="500"
+        data-aos-duration="2500"
+      >
         <div>
           <div className="mb- lg:mb-3">
             <h3 className="font-bold text-white font-accent text-4xl">EthK</h3>
@@ -33,7 +38,7 @@ const Footer = () => {
             </div>
           </section>
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-delay="500">
           <FootHeader text="Company" />
           <ul>
             <FootLnks text="Blog our Company" />
@@ -41,7 +46,7 @@ const Footer = () => {
             <FootLnks text="Careers" />
           </ul>
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-delay="600">
           <FootHeader text="Features" />
           <ul>
             <FootLnks text="Market" />
@@ -49,7 +54,7 @@ const Footer = () => {
             <FootLnks text="Community" />
           </ul>
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-delay="700">
           <FootHeader text="Partners" />
           <ul>
             <FootLnks text="Market Capital" />
@@ -57,8 +62,8 @@ const Footer = () => {
             <FootLnks text="Coinbase" />
           </ul>
         </div>
-        <div>
-          <div className="w-40 mb-5">
+        <div data-aos="fade-up" data-aos-delay="800">
+          <div className="w-40 mb-5" data-aos="fade-up" data-aos-delay="900">
             <img src={appstore} alt="Download on Appstore" />
           </div>
           <div className="w-40">
@@ -67,7 +72,11 @@ const Footer = () => {
         </div>
       </section>
 
-      <section className="flex items-center justify-center pb-4 mt-6 lg:hidden">
+      <section
+        className="flex items-center justify-center pb-4 mt-6 lg:hidden"
+        data-aos="fade-up"
+        data-aos-delay="1000"
+      >
         <small className="text-white text-xs">
           EthKings &copy; 2022 | All Rights Reserved
         </small>
