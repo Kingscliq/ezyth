@@ -5,6 +5,7 @@ import { ethToUsd, getFullDate, shorten } from '../../utils/formatters';
 import { useFetch } from '../hooks/useFetch';
 import { FaDownload } from 'react-icons/fa';
 import Divider from './elements/divider';
+import Button from './elements/button';
 
 interface TransactionItemProp {
   message: string;
@@ -107,7 +108,7 @@ const TransactionCard: React.FC<TransactionItemProp> = ({
   );
 };
 
-const Transactions = () => {
+const Transactions: React.FC<{ btnClick: () => void }> = ({ btnClick }) => {
   const { currentAccount, connectToWallet, transactions } =
     useContext(TransactionsContext);
 
@@ -115,22 +116,31 @@ const Transactions = () => {
     <section className="w-full py-16 md:px-16 px-4">
       <div className="my-4 mb-10">
         {currentAccount ? (
-          <>
-            <h2
-              className="text-3xl lg:text-[2.25rem] font-medium text-center lg:text-left lg:w-[60%] text-white leading-[1.5]"
-              data-aos="fade-up"
-            >
-              Latest Transactions
-            </h2>
-            <p
-              className="my-4 lg:w-96 w-full text-center lg:text-left p-y lg:p-auto text-gray-400 text-[0.875rem] leading-[2.0]"
-              data-aos="fade-up"
-              data-aos-delay="500"
-              data-aos-duration="2500"
-            >
-              Here is a List of your Latest Transactions
-            </p>
-          </>
+          <section className="flex items-center justify-between">
+            <div>
+              <h2
+                className="text-3xl lg:text-[2.25rem] font-medium text-center lg:text-left text-white leading-[1.5]"
+                data-aos="fade-up"
+              >
+                Latest Transactions
+              </h2>
+              <p
+                className="my-4 lg:w-96 w-full text-center lg:text-left p-y lg:p-auto text-gray-400 text-[0.875rem] leading-[2.0]"
+                data-aos="fade-up"
+                data-aos-delay="500"
+                data-aos-duration="2500"
+              >
+                Here is a List of your Latest Transactions
+              </p>
+            </div>
+            <div>
+              <Button
+                onClick={btnClick}
+                className="py-3 rounded-full bg-primary px-7 my-4 hover:bg-[#4c6cde] transition-all duration-500 ease-in-out flex items-center"
+                label="Send Crypto"
+              />
+            </div>
+          </section>
         ) : (
           <div className="flex items-center justify-center lg:justify-start">
             <button

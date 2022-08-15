@@ -32,7 +32,7 @@ function App() {
         </div>
         <Service />
         <WorldUsers />
-        <Transactions />
+        <Transactions btnClick={() => setModalOpen(true)} />
         {/* <MarketChart /> */}
         <Cta modalOpen={modalOpen} setModalOpen={setModalOpen} />
         <Divider />
