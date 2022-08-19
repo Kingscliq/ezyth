@@ -8,6 +8,7 @@ import { Formik, useFormik } from 'formik';
 import * as yup from 'yup';
 import { shorten } from '../../utils/formatters';
 import { BsArrowRight } from 'react-icons/bs';
+import { phone } from '../assets/images';
 
 const Hero: React.FC<{
   setModalOpen: React.Dispatch<React.SetStateAction<string>> | any;
@@ -48,11 +49,11 @@ const Hero: React.FC<{
     'min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-50 text-sm font-light text-white hover:bg-primary transition-all duration-200 ease-in-out cursor-pointer';
   return (
     <section className="text-gray-200 w-full py-16 md:px-24 ">
-      <div className="grid lg:grid-cols-2 gap-20 grid-cols-1">
+      <div className="grid lg:grid-cols-2 gap-5 grid-cols-1">
         <div className="justify-center items-center">
           <div>
             <div data-aos="fade-up" data-duration="2500">
-              <h3 className="text-3xl lg:text-[2.25rem] font-medium text-center lg:text-left lg:w-[60%] leading-[1.5]">
+              <h3 className="text-3xl lg:text-[3.25rem] font-medium text-center lg:text-left lg:w-[60%] leading-[1.5]">
                 Send Crypto Across the World
               </h3>
             </div>
@@ -85,7 +86,7 @@ const Hero: React.FC<{
           </div>
 
           <div className="mt-6 mb-4"></div>
-          <div
+          {/* <div
             className="grid lg:grid-cols-3 grid-cols-2 "
             data-aos="fade-left"
             data-aos-easing="linear"
@@ -105,11 +106,12 @@ const Hero: React.FC<{
             <div className={`lg:rounded-br-3xl rounded-none  ${commonStyles}`}>
               Blockchain
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <section className="p-4 lg:p-0" data-aos="flip-up">
-          <div className="rounded-3xl w-full eth-card p-6 flex flex-col justify-between h-[300px]">
+        <section className="p-4 lg:w-[30rem] lg:p-0 " data-aos="flip-up">
+          <img src={phone} />
+          {/* <div className="rounded-3xl w-full eth-card p-6 flex flex-col justify-between h-[300px]">
             <div className="flex items-start justify-between">
               <div className="p-6 rounded-full border-4 border-gray-100 text-gray-100 text-3xl">
                 <FaEthereum />
@@ -128,7 +130,7 @@ const Hero: React.FC<{
                 </h2>
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
       </div>
     </section>

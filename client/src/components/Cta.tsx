@@ -3,6 +3,7 @@ import { BiInfoCircle } from 'react-icons/bi';
 import { BsArrowRight } from 'react-icons/bs';
 import { FaEthereum } from 'react-icons/fa';
 import { shorten } from '../../utils/formatters';
+import { hand } from '../assets/images';
 import { TransactionsContext } from '../context/TransactionsContext';
 
 interface CtaProps {
@@ -58,7 +59,8 @@ const Cta: React.FC<CtaProps> = ({ modalOpen, setModalOpen }) => {
           data-aos-delay="500"
           data-aos-duration="2500"
         >
-          <div className="rounded-3xl w-full eth-card p-6 flex flex-col justify-between h-[300px]">
+          <img src={hand} />
+          {/* <div className="rounded-3xl w-full eth-card p-6 flex flex-col justify-between h-[300px]">
             <div className="flex items-start justify-between">
               <div className="p-6 rounded-full border-4 border-gray-100 text-gray-100 text-3xl">
                 <FaEthereum />
@@ -77,7 +79,7 @@ const Cta: React.FC<CtaProps> = ({ modalOpen, setModalOpen }) => {
                 </h2>
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
       </div>
     </section>

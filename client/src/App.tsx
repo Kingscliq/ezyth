@@ -7,6 +7,7 @@ import WorldUsers from './components/WorldUsers';
 import Cta from './components/Cta';
 import Divider from './components/elements/divider';
 import { TransactionsContext } from './context/TransactionsContext';
+import ParticlesBackground from './components/ParticlesBackground';
 
 function App() {
   useEffect(() => {
@@ -32,7 +33,9 @@ function App() {
         </div>
         <Service />
         <WorldUsers />
-        <Transactions btnClick={() => setModalOpen(true)} />
+        <div className="hidden lg:block">
+          <Transactions btnClick={() => setModalOpen(true)} />
+        </div>
         {/* <MarketChart /> */}
         <Cta modalOpen={modalOpen} setModalOpen={setModalOpen} />
         <Divider />
