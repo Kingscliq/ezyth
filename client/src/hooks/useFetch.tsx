@@ -5,7 +5,6 @@ import { API_KEY } from '../../utils/constants';
 export const useFetch = (keyword: string) => {
   const [url, setUrl] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-  //   const [data, setData] = useState<string[]>([]);
 
   const fetchGifByKeyword = async () => {
     setLoading(true);
